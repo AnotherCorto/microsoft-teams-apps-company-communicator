@@ -1064,6 +1064,7 @@ if ($azureCLIVersion)
         EXIT
     }
 
+    # replace with Connect-MgGraph
     WriteI -message "Azure AD sign-in..."
     $ADaccount = Connect-AzureAD -Tenant $parameters.subscriptionTenantId.Value -ErrorAction Stop
     $userAlias = (($user | ConvertFrom-Json) | where {$_.id -eq $parameters.subscriptionId.Value}).user.name
